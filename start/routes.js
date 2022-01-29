@@ -1,5 +1,9 @@
 'use strict'
 
+const DivisorController = require('../app/Controllers/Http/DivisorController')
+
+// const divisores = use('app/Controllers/DivisorController')
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -19,3 +23,5 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.get('/divisores', 'DivisorController.getDivisores')
