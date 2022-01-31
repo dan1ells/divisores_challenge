@@ -20,7 +20,7 @@ class DivisorService {
                 divisoresPrimos.push(divisor)
             }
         }
-        return 'Número de Entrada: ' + num + ' \nNúmeros divisores ' + divisores + '\nDivisores Primos: ' + divisoresPrimos
+        return 'Número de Entrada: ' + num + ' \nNúmeros divisores: ' + divisores + '\nDivisores Primos: ' + divisoresPrimos
     }
 
     async numeroPrimo(n) {

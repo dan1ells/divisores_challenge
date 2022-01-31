@@ -24,4 +24,4 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.get('/divisores/:num', 'DivisorController.calculaDivisores')
+Route.get('/divisores/', 'DivisorController.calculaDivisores')

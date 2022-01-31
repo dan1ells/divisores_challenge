@@ -1,6 +1,8 @@
 'use strict'
 
 const DivisorService = use('App/Services/DivisorService')
+const AppException = use('App/Exceptions/AppException')
+const { numeroValido } = use('App/Helpers')
 
 class DivisorController {
     constructor() {
@@ -8,10 +10,16 @@ class DivisorController {
       }
 
 
-    async calculaDivisores({ params }){
-        const { num } = params
-        const divisor = this._divisorService.calculaDivisores(num)
+    async calculaDivisores({ request }){
+        const requestBody = request.only(["numero"]);
+        const num = requestBody.numero
 
+        const numberIsValid = numeroValido(num)
+        if (!numberIsValid) {
+            throw new AppException('Não foi digitado um número valido')
+        }
+
+        const divisor = this._divisorService.calculaDivisores(num)
         return divisor
     }
 
